@@ -1,7 +1,7 @@
 <?php
 require('dbconnect.php');
 require('auth.php');
-$Visits = $conn->query("SELECT * FROM Visit");
+$Visits = $conn->query("SELECT * FROM visit");
 
 if($_SESSION['user_type'] == 3)
 {

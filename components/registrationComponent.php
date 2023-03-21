@@ -14,7 +14,7 @@
                 <input type="radio" id="id3" name="role" value="Participant" checked class="form-check-input flex-shrink-0">
                 <label for="id3">Клиент</label>
                 <input type="radio" id="id4" name="role" value="Host" class="form-check-input flex-shrink-0">
-                <label for="id4">Специалист</label>
+                <label for="id4">Фотограф</label>
             </div>
             <div class="form-floating mb-2">
                 <input type="text" name="login" id="id5" class="form-control" placeholder="Логин">
