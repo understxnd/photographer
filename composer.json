@@ -6,5 +6,6 @@
     },
     "autoload": {
         "psr-4": {
-            "": "src"
+            "App\\": "src",
+            "Framework\\": "framework"
 }}}

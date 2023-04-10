@@ -22,7 +22,8 @@ if ($_POST['login'] && $_POST['password']) {
 
             $resource = Container::getFileUploader()->store($file, $filename);
             $picture_url = $resource['ObjectURL'];
-        } else {
+        }
+        else {
             $picture_url = '/assets/404.jpg';
         }
 
@@ -37,10 +38,12 @@ if ($_POST['login'] && $_POST['password']) {
                 $stmt->bindValue(':role', $role);
                 $stmt->bindValue(':picture_url', $picture_url);
                 $stmt->execute();
-            } catch (PDOexception $error) {
+            }
+            catch (PDOexception $error) {
                 $_SESSION['msg'] = "Ошибка создания " . $error->getMessage();
             }
-        } else if ($role == 2) {
+        }
+        else if ($role == 2) {
             try {
                 $sql = 'INSERT INTO photographer(name, phone, login, password, role, img_url) VALUES(:Name, :Phone_numb, :login, :password, :role, :picture_url)';
                 $stmt = $conn->prepare($sql);
@@ -52,7 +55,8 @@ if ($_POST['login'] && $_POST['password']) {
                 $stmt->bindValue(':picture_url', $picture_url);
                 $stmt->execute();
 
-            } catch (PDOexception $error) {
+            }
+            catch (PDOexception $error) {
                 $_SESSION['msg'] = "Ошибка создания " . $error->getMessage();
             }
         }
