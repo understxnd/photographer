@@ -8,6 +8,7 @@ if ($_POST['login']){
         if (($_POST['password']) == $row['password']){
             $_SESSION['username'] = $_POST['login'];
             $_SESSION['id_auth_user'] = $row['id'];
+            $_SESSION['img'] = $row['img_url'];
             $_SESSION['user_type'] = 3;
             $_SESSION['user_name'] = $row['nme'];
         }
@@ -28,6 +29,7 @@ if ($_POST['login']){
         if (($_POST['password']) == $row['password']){
             $_SESSION['username'] = $_POST['login'];
             $_SESSION['id_auth_user'] = $row['id'];
+            $_SESSION['img'] = $row['img_url'];
             $_SESSION['user_type'] = 2;
             $_SESSION['user_name'] = $row['nme'];
         }

@@ -1,6 +1,6 @@
 <main class="form-signin w-50 m-auto text-center">
     <div class="container">
-        <form method="post" action="../registration.php">
+        <form method="post" action="../registration.php" enctype="multipart/form-data">
             <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
             <div class="form-floating mb-2">
                 <input type="text" name="Name" id="id1" class="form-control" placeholder="Имя">
@@ -24,6 +24,9 @@
                 <input type="password" name="password" id="id6" class="form-control" placeholder="Пароль">
                 <label for="id6" class="text-black">Пароль</label>
             </div>
+            <label>
+                Изображение: <input type="file" name="filename">
+            </label>
             <p><input type="submit" value="Зарегистрироваться" class="btn btn-lg btn-warning"></p>
         </form>
     </div>

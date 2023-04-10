@@ -45,7 +45,7 @@
                 }
 
                 if ($_SESSION['username']) {
-
+                    echo ('<img src=<?='.$_SESSION['img'].'?>');
                     echo ('<a href="login.php?logout=1" class="nav-link px-2 text-white">'.$_SESSION['username'].' (Выйти) </a>');
                     echo ('<a href="delogin.php?" class="nav-link px-2 text-white">Удалить аккаунт </a>');
                 }
