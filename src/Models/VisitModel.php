@@ -4,8 +4,8 @@ namespace App\Models;
 use Framework\Model;
 use Framework\MysqlModel;
 
-class UserModel extends MysqlModel
+class VisitModel extends MysqlModel
 {
-    protected static $table = "client";
+    protected static $table = "visit";
 
 }
