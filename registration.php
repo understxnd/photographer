@@ -1,9 +1,11 @@
 <?php
+use Framework\Container;
 require('dbconnect.php');
 require('auth.php');
 require('components/header.php');
 
 if ($_POST['login'] && $_POST['password']) {
+
     switch ($_POST['role']) {
         case 'Host':
             $role = 2;
@@ -13,13 +15,12 @@ if ($_POST['login'] && $_POST['password']) {
             break;
 
     }
-    if (strlen($_POST['name']) >= 3) {
+    if (strlen($_POST['Name']) >= 3) {
         if ($file = fopen($_FILES['filename']['tmp_name'], 'r+')) {
             //получение расширения
             $ext = explode('.', $_FILES["filename"]["name"]);
             $ext = $ext[count($ext) - 1];
             $filename = 'file' . rand(100000, 999999) . '.' . $ext;
-
             $resource = Container::getFileUploader()->store($file, $filename);
             $picture_url = $resource['ObjectURL'];
         }
@@ -28,6 +29,7 @@ if ($_POST['login'] && $_POST['password']) {
         }
 
         if ($role == 3) {
+            var_dump($_POST);
             try {
                 $sql = 'INSERT INTO client(name, phone, login, password, role, img_url) VALUES(:Name, :Phone_numb, :login, :password, :role, :picture_url)';
                 $stmt = $conn->prepare($sql);

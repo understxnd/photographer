@@ -1,8 +1,8 @@
 <?php
 require("components/header.php");
-require ('src/Views/header.php');
+require ('App/Views/header.php');
 ?>
-<h1 class="text-white" >Список Записей:</h1>
+<h1 class="text-center" >Список Записей:</h1>
 
 <main class="container">
     <div class="my-3 p-3 bg-body rounded shadow-sm">
